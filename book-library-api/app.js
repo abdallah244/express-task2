@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, "public")));
 const bookRoutes = require("./routes/books");
 app.use("/api/books", bookRoutes);
 
-// ✅ أي Route مش معروف → يرجع صفحة الواجهة
+
 app.use((req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
