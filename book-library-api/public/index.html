@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>📚 Futuristic Book Library</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Animated Background -->
+  <div class="bg-anim">
+    <div></div><div></div><div></div><div></div>
+  </div>
+
+  <!-- Loader -->
+  <div id="loader" class="loader">
+    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h2>🚀 BookLibrary</h2>
+    <ul>
+      <li><a href="#" onclick="showPage('home')">Home</a></li>
+      <li><a href="#" onclick="showPage('api')">API Explorer</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home Page -->
+  <div id="homePage" class="page active">
+    <header class="hero">
+      <h1>📚 Futuristic Book Library</h1>
+      <p>Manage your books with style</p>
+    </header>
+
+    <main class="container">
+      <section class="form-section card">
+        <h2>Add New Book</h2>
+        <form id="bookForm" novalidate>
+          <div class="field">
+            <input type="text" id="title" placeholder="Book Title" required />
+            <small class="error" id="titleError"></small>
+          </div>
+          <div class="field">
+            <input type="text" id="author" placeholder="Author Name" required />
+            <small class="error" id="authorError"></small>
+          </div>
+          <button type="submit" class="btn">➕ Add Book</button>
+        </form>
+      </section>
+
+      <section class="list-section card">
+        <h2>Book List</h2>
+        <ul id="bookList" class="book-list"></ul>
+      </section>
+    </main>
+  </div>
+
+  <!-- API Explorer Page -->
+  <div id="apiPage" class="page">
+    <header class="hero">
+      <h1>🌐 API Explorer</h1>
+      <p>See the raw API data of your books</p>
+    </header>
+    <main class="container">
+      <section class="card">
+        <button class="btn" onclick="loadAPIData()">🔄 Refresh API Data</button>
+        <pre id="apiData" class="api-box">Loading...</pre>
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Book Library | Made by Abdallah hany</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
